@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-//import { usePathname } from 'next/navigation'
+// import { usePathname } from 'next/navigation'
 import Typography from '@/components/ui/typography'
 import {
   Drawer,
@@ -18,7 +18,7 @@ interface SidebarProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function Header({ className }: SidebarProps) {
-  //const pathname = usePathname()
+  // const pathname = usePathname()
   // const items = [
   //   {
   //     href: 'https://map.sistilli.dev/public/coding/SaaS+Boilerplate',
@@ -53,7 +53,13 @@ export function Header({ className }: SidebarProps) {
         href="https://0b4z4ead6bk.typeform.com/to/zJvUoA0o"
         target="_blank"
       >
-        <Button onClick={() => { mixpanel.track("Header CTA Clicked"); }} size="tiny" color="ghost">
+        <Button
+          onClick={() => {
+            mixpanel.track('Header CTA Clicked')
+          }}
+          size="tiny"
+          color="ghost"
+        >
           <Typography variant="p" className="text-black">
             Sign Up
           </Typography>

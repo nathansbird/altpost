@@ -35,8 +35,8 @@ export default function Page() {
           refers to: Ontario, Canada Company (referred to as
           either the Company, We, Us or Our in this
           Agreement) refers to Collide Digital Media, LLC.
-          Device means any device that can access
-          the Service such as a computer, a cellphone or a
+          Device means any device that can access the
+          Service such as a computer, a cellphone or a
           digital tablet. Service refers to the Website.
           Terms and Conditions (also referred as Terms) mean
           these Terms and Conditions that form the entire
@@ -48,12 +48,13 @@ export default function Page() {
           (including data, information, products or
           services) provided by a third-party that may be
           displayed, included or made available by the
-          Service. Website refers to Collide Digital Media, LLC, accessible from
-          https://collidedigitalmedia.com/ You means the individual
-          accessing or using the Service, or the company, or
-          other legal entity on behalf of which such
-          individual is accessing or using the Service, as
-          applicable.
+          Service. Website refers to Collide Digital Media,
+          LLC, accessible from
+          https://collidedigitalmedia.com/ You means the
+          individual accessing or using the Service, or the
+          company, or other legal entity on behalf of which
+          such individual is accessing or using the Service,
+          as applicable.
         </p>
       </section>
 
