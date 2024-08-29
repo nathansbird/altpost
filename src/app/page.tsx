@@ -1,11 +1,19 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
 import Image from 'next/image'
 import Feature from './feature'
 import { ArrowUpDown, Sparkle, Timer } from 'lucide-react'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import mixpanel from 'mixpanel-browser'
 
 export default function Home() {
+
+  useEffect(() => {
+    mixpanel.init("f4ad5d527929117bc9254bdd7adc6979", {track_pageview: true});
+  }, []);
+
   return (
     <div
       className="flex flex-col h-full md:py-36 md:px-32 pt-11 pb-24 px-8
@@ -13,50 +21,52 @@ export default function Home() {
     >
       <div className="flex flex-col gap-6 items-center">
         <Typography className="max-w-2xl" variant="h1">
-          Post Anywhere.<br/>Post Anything.<br/>PostOnce.
+          AltPost<br/><br/>Content planning for every platform.
         </Typography>
         <Typography className="max-w-2xl" variant="h5">
-          Upload your content to one platform, and schedule it anywhere. Get real-time AI tips to boost reach across individual platforms.
+          Upload your content to one platform, and schedule it anywhere. AltPost is the only platform with support for conservative, alternative, and free-speech networks.
         </Typography>
         <Link
-          href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
+          href="https://0b4z4ead6bk.typeform.com/to/zJvUoA0o"
           target="_blank"
         >
-          <Button size="tiny" variant="ghost">
-            {`Get Started`}
+          <Button onClick={() => {
+            mixpanel.track("Hero CTA Clicked");
+          }} size="tiny" variant="ghost">
+            {`Sign Up`}
           </Button>
         </Link>
         <Image
           width={1024}
           height={632}
-          alt="Pandem.dev hero image"
+          alt="AltPost.io hero image"
           src="/hero1.png"
         />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
         <div className="flex flex-col gap-12 items-center">
           <Typography className="max-w-2xl" variant="h1">
-            The swiss army knife of Content Management
+            Content scheduling tools for underserved networks
           </Typography>
           <div className="flex md:flex-row flex-col gap-12">
-            <Feature
-              icon={<Sparkle size={24} />}
-              headline="AI Content Suggestions"
-              description="Get platform-specific AI suggestions to optimize content for virality and maximum engagement."
-            />
-            <Feature
-              icon={<ArrowUpDown size={24} />}
-              headline="Diverse platforms"
-              description="Works with Instagram, TikTok, Facebook, Threads, X, TUVU, LinkedIn, Lemon8, Gab, Gettr, Parler, Truth Social, and Mastodon."
-            />
             <Feature
               icon={<Timer size={24} />}
               headline="Save precious time"
               description="Save countless hours typically spent uploading, tweaking and fine-tuning your posts by uploading once."
             />
+            <Feature
+              icon={<ArrowUpDown size={24} />}
+              headline="Diverse platforms"
+              description="Works with Instagram, TikTok, Facebook, Threads, X, TUVU, LinkedIn, Lemon8, Gab, Gettr, Parler, Truth Social, and Mastodon. Need more? Just ask."
+            />
+            <Feature
+              icon={<Sparkle size={24} />}
+              headline="AI Content Suggestions"
+              description="(COMING SOON) Get platform-specific AI suggestions to optimize content for virality and maximum engagement."
+            />
           </div>
         </div>
-        <div className="flex flex-col gap-6 max-w-2xl items-center">
+        {/* <div className="flex flex-col gap-6 max-w-2xl items-center">
           <Typography className="max-w-2xl" variant="h1">
             Instant posts
           </Typography>
@@ -68,21 +78,21 @@ export default function Home() {
           <Image
             width={1024}
             height={632}
-            alt="Pandem.dev hero image"
+            alt="AltPost.io hero image"
             src="/hero1.png"
           />
-        </div>
+        </div> */}
         <div className="flex flex-col gap-6 items-center">
           <Typography className="max-w-2xl" variant="h1">
-            Get in touch
+            Get Started
           </Typography>
-          <div>Book a demo, or hop on a call</div>
+          <div>We&apos;re brand new.<br/>Get 3-months on content management 100% free by joining today.</div>
           <Link
-            href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
+            href="https://0b4z4ead6bk.typeform.com/to/zJvUoA0o"
             target="_blank"
           >
-            <Button size="tiny" variant="ghost">
-              {`Book now`}
+            <Button onClick={() => { mixpanel.track("Bottom CTA Clicked"); }} size="tiny" variant="ghost">
+              {`Sign Up`}
             </Button>
           </Link>
         </div>

@@ -10,19 +10,19 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title:
-    'Pandem - Information you need during on-call emergencies',
+    'AltPost - Content planning for every platform.',
   description:
-    'Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.',
+    'Upload your content to one platform, and schedule it anywhere. AltPost is the only platform with support for conservative, alternative, and free-speech networks.',
   openGraph: {
     images: '/opengraph-image.png'
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Pandem - Information you need during on-call emergencies',
+      'AltPost - Content planning for every platform.',
     description:
-      'Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.',
-    images: ['https://i.imgur.com/MPMcyPP.png']
+      'Upload your content to one platform, and schedule it anywhere. AltPost is the only platform with support for conservative, alternative, and free-speech networks.',
+    images: ['https://i.imgur.com/Hlg3w9w.png']
   }
 }
 

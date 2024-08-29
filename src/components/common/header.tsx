@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { usePathname } from 'next/navigation'
+//import { usePathname } from 'next/navigation'
 import Typography from '@/components/ui/typography'
 import {
   Drawer,
@@ -12,47 +12,48 @@ import {
   DrawerTrigger
 } from '@/components/ui/drawer'
 import { MenuIcon, X } from 'lucide-react'
+import mixpanel from 'mixpanel-browser'
 
 interface SidebarProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function Header({ className }: SidebarProps) {
-  const pathname = usePathname()
-  const items = [
-    {
-      href: 'https://map.sistilli.dev/public/coding/SaaS+Boilerplate',
-      title: 'Book a demo',
-      openInNewTab: true
-    }
-    // { href: '#pricing', title: 'Features' },
-    // {
-    //   href: 'mailto:myemail@.com',
-    //   title: 'Contact Us'
-    // }
-  ]
+  //const pathname = usePathname()
+  // const items = [
+  //   {
+  //     href: 'https://map.sistilli.dev/public/coding/SaaS+Boilerplate',
+  //     title: 'Book a demo',
+  //     openInNewTab: true
+  //   }
+  //   { href: '#pricing', title: 'Features' },
+  //   {
+  //     href: 'mailto:myemail@.com',
+  //     title: 'Contact Us'
+  //   }
+  // ]
 
   const getLogo = () => (
     <Link href="/" className="pointer flex items-center">
       <img src="/logo.svg" className="mr-3" />
       <Typography className="!text-white !text-base font-medium ">
-        PostOnce
+        AltPost
       </Typography>
     </Link>
   )
 
   const getAuthButtons = () => (
     <div className="flex gap-3 items-center">
-      <Link
+      {/* <Link
         href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
         target="_blank"
       >
         <Typography variant="p">Login</Typography>
-      </Link>
+      </Link> */}
       <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
+        href="https://0b4z4ead6bk.typeform.com/to/zJvUoA0o"
         target="_blank"
       >
-        <Button size="tiny" color="ghost">
+        <Button onClick={() => { mixpanel.track("Header CTA Clicked"); }} size="tiny" color="ghost">
           <Typography variant="p" className="text-black">
             Sign Up
           </Typography>
@@ -64,7 +65,7 @@ export function Header({ className }: SidebarProps) {
   const getHeaderItems = () => {
     return (
       <>
-        {items.map((item) => {
+        {/* {items.map((item) => {
           const selected =
             pathname === item.href ||
             pathname.includes(item.href)
@@ -83,7 +84,7 @@ export function Header({ className }: SidebarProps) {
               </Typography>
             </Link>
           )
-        })}
+        })} */}
       </>
     )
   }
